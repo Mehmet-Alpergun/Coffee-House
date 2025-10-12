@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <a href="./index.html">
+          <img src="./logo.png" alt="logo" class="logoresmi" />
+        </a>
+        <nav class="extra">
+          <ul>
+            <li><a href="#favourite-coffer">Favorite cofee</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#mobile-app">mobile app</a></li>
+            <li><a href="#footer">Contact us</a></li>
+          </ul>
+        </nav>
+        <a class="kose" href="./menu.html">
+          <div
+            style="
+              width: 72px;
+              height: 24px;
+              padding: 3px;
+              border-bottom: 2px solid;
+              justify-content: center;
+              display: flex;
+              align-items: center;
+              font-weight: 600;
+              font-size: 16px;
+            "
+          >
+            <span>Menu</span>
+            <img class="kahveresm" src="./coffee-cup.svg" alt="coffe-cup" />
+          </div>
+        </a>
+        <div class="normalolan" style="cursor: pointer" id="menubtn">
+          <img src="./State=default.svg" alt="iconn" />
+        </div>
+        <div class="normal-olmayan" id="yeterlan">
+          <img src="./State=active.svg" alt="lann" />
+        </div>
+      </div>
+      <nav class="dort" id="menuismenulan">
+        <ul>
+          <li><a href="#favourite-coffer">Favorite cofee</a></li>
+          <li><a href="#about">about</a></li>
+          <li><a href="#mobile-app">mobile app</a></li>
+          <li><a href="#footer">Contact us</a></li>
+          <li style="border-bottom: 1px solid #403f3d">
+            <a class="moneyismoneylan" href="./menu.html">
+              <span>Menu</span>
+              <img
+                src="./coffee-cup.svg"
+                alt="coffe-cup"
+                style="width: 40px; height: 40px"
+              />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div style="display: flex; justify-content: center; align-items: center">
+        <div class="menu-container">
+          <div class="offering">
+            <span class="offering-text">
+              <span class="line">Behind each of our</span><br />
+              <span class="line">cups hides an</span><br class="brulan" />
+              <span class="line-accent">amazing surprise</span>
+            </span>
+
+            <div class="tab-container">
+              <div id="coffeebtn" class="coffee-container">
+                <div class="coffee-round">
+                  <img
+                    src="cofferound.png"
+                    alt="beyaz"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+                <span class="coffee-text">coffee</span>
+              </div>
+              <div id="teabutton" class="tea-container">
+                <div class="tea-round">
+                  <img
+                    src="beyaztepot.png"
+                    alt="beyaz"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+                <span class="tea-text">Tea</span>
+              </div>
+              <div id="dessertbtn" class="dessert-container">
+                <div class="dessert-round">
+                  <img
+                    src="dessertround.png"
+                    alt="beyaz"
+                    style="width: 20px; height: 20px"
+                  />
+                </div>
+                <span class="dessert-text">Dessert</span>
+              </div>
+            </div>
+          </div>
+          <div class="menu-products"></div>
+          <button class="reloadbutonu">
+            <img
+              src="./refresh.svg"
+              alt="refresh"
+              style="width: 24px; height: 24px"
+            />
+          </button>
+        </div>
+      </div>
+      <div class="modal-container">
+        <div class="modal">
+          <div class="resim-modal">
+            <img src="./Latte.svg" alt="sssss" class="modalinresmi" />
+          </div>
+          <div class="description-contaier">
+            <div class="titlelann">
+              <span class="titlelan-name"></span>
+              <span class="real-description"></span>
+            </div>
+            <div class="sizze">
+              <span>size</span>
+              <div class="tabbblar">
+                <div class="ilk-iki">
+                  <div class="kucuk active">
+                    <div class="kucuk-daire active">S</div>
+                    <span class="kucukisim active"></span>
+                  </div>
+                  <div class="orta">
+                    <div class="orta-daire">M</div>
+                    <span class="ortaisim"></span>
+                  </div>
+                </div>
+                <div class="buyuk">
+                  <div class="buyuk-daire">L</div>
+                  <span class="buyukisim"></span>
+                </div>
+              </div>
+            </div>
+            <div class="sizze">
+              <span>Additives</span>
+              <div class="tabbblar">
+                <div class="ilk-iki">
+                  <div class="kucuk1">
+                    <div class="kucuk1-daire">1</div>
+                    <span class="kucuk1-isim">dinamik</span>
+                  </div>
+                  <div class="orta1">
+                    <div class="orta1-daire">2</div>
+                    <span class="orta1-isim">dinamik</span>
+                  </div>
+                </div>
+                <div class="buyuk1">
+                  <div class="buyuk1-daire">3</div>
+                  <span class="buyuk1-isim">dinamik</span>
+                </div>
+              </div>
+            </div>
+            <div class="totall">
+              <span>Total:</span>
+              <span class="price">fiyat</span>
+            </div>
+            <div class="uyari">
+              <img src="info-empty.svg" alt="iii" class="resimboyut" />
+              <span style="font-size: 10px; font-weight: 600"
+                >The cost is not final. Download our mobile app to see the final
+                price and place your order. Earn loyalty points and enjoy your
+                favorite coffee with up to 20% discount.</span
+              >
+            </div>
+            <button class="kapatmatusu">Close</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer
+      id="footer"
+      style="
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      "
+    >
+      <div class="contacts-container">
+        <div class="contacts-offer-container">
+          <span class="contacts-offer-yazi"
+            >Sip, Savor, Smile.
+            <span style="color: #8d7362"> It’s coffee time!</span></span
+          >
+          <div class="contacts-socials">
+            <img
+              src="./twitter-button-icon-light.svg"
+              alt="x"
+              class="twiteerfalan"
+            />
+            <img
+              src="./instagram-button-icon-light.svg"
+              class="twiteerfalan"
+              alt="i"
+            />
+            <img
+              src="./facebook-button-icon-light.svg"
+              class="twiteerfalan"
+              alt="f"
+            />
+          </div>
+        </div>
+        <div class="contacts-info">
+          <span class="contacts-info-yazi">Contact us</span>
+          <div class="contacts-info-street">
+            <div class="contact-info-konum">
+              <img src="./pin-alt.svg" alt="konum" class="contact-icon" />
+              <span class="contact-info-yazi-ayari">8558 Green Rd., LA</span>
+            </div>
+            <div style="width: 175px; height: 28px; display: flex; gap: 8px">
+              <img src="./phone.svg" alt="konum" class="contact-icon" />
+              <span class="contact-info-yazi-ayari">+1 (603) 555-0123</span>
+            </div>
+            <div style="width: 268px; height: 28px; display: flex; gap: 8px">
+              <img src="./clock.svg" alt="konum" class="contact-icon" />
+              <span class="contact-info-yazi-ayari"
+                >Mon-Sat: 9:00 AM – 23:00 PM</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="menu.js"></script>
+  </body>
+</html>
