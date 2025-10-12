@@ -112,10 +112,6 @@ const price = document.querySelector(".price");
 
 const modalImg = document.querySelector(".modalinresmi");
 
-let selectedSize = "s";
-let selectedAdditives = [];
-let basePrice = 0;
-
 function calculateTotalPrice(item) {
   const sizeExtra = Number(item.sizes[selectedSize].addprice);
   const additivesTotal = selectedAdditives.reduce((sum, addIndex) => {
@@ -128,8 +124,15 @@ function calculateTotalPrice(item) {
   price.textContent = `$${Number(total).toFixed(2)}`;
 }
 
+let currentItem = null;
+let selectedSize = "s";
+let selectedAdditives = [];
+let basePrice = 0;
+
 function openModal(item) {
+  currentItem = item;
   modal.classList.add("active");
+
   modalTitle.textContent = item.name;
   modalDesc.textContent = item.description;
   modalImg.src = `./${item.name}.svg`;
@@ -146,79 +149,87 @@ function openModal(item) {
   selectedSize = "s";
   selectedAdditives = [];
 
-  calculateTotalPrice(item);
-
-  // --- boyut seçimi ---
-  document.querySelectorAll(".kucuk, .orta, .buyuk").forEach((el) => {
-    el.addEventListener("click", () => {
-      document
-        .querySelectorAll(
-          ".kucuk, .kucuk-daire, .kucukisim, .orta, .orta-daire, .ortaisim, .buyuk, .buyuk-daire, .buyukisim"
-        )
-        .forEach((b) => b.classList.remove("active"));
-      el.classList.add("active");
-      el.querySelectorAll("div, span").forEach((child) =>
-        child.classList.add("active")
-      );
-      if (el.classList.contains("kucuk")) selectedSize = "s";
-      else if (el.classList.contains("orta")) selectedSize = "m";
-      else selectedSize = "l";
-      calculateTotalPrice(item);
-    });
-  });
-
-  // --- additive seçimi ---
-  document.querySelectorAll(".kucuk1, .orta1, .buyuk1").forEach((el, index) => {
-    el.addEventListener("click", () => {
-      el.classList.toggle("active");
-      el.querySelectorAll("div, span").forEach((child) =>
-        child.classList.toggle("active")
-      );
-      if (el.classList.contains("active")) {
-        selectedAdditives.push(index);
-      } else {
-        selectedAdditives = selectedAdditives.filter((i) => i !== index);
-      }
-
-      calculateTotalPrice(item);
-    });
-  });
-}
-
-function closeModal() {
-  modal.classList.remove("active");
-  document.body.style.overflow = "";
-
-  // --- Boyut ve katkı seçimi reset ---
-  selectedSize = "s";
-  selectedAdditives = [];
-
-  // Tüm active class’larını temizle
+  // --- UI sıfırlama ---
   document
     .querySelectorAll(
       ".kucuk, .kucuk-daire, .kucukisim, .orta, .orta-daire, .ortaisim, .buyuk, .buyuk-daire, .buyukisim, .kucuk1, .orta1, .buyuk1, .kucuk1-daire, .kucuk1-isim, .orta1-daire, .orta1-isim, .buyuk1-daire, .buyuk1-isim"
     )
     .forEach((el) => el.classList.remove("active"));
 
-  // Varsayılan boyut (küçük) aktif hale getir
+  // varsayılan boyut aktif
   document.querySelector(".kucuk").classList.add("active");
   document.querySelector(".kucuk-daire").classList.add("active");
   document.querySelector(".kucukisim").classList.add("active");
 
-  // Varsayılan fiyatı geri döndür (modal kapanırken item objesi yok, bu yüzden sadece UI temizlenir)
-  price.textContent = "";
+  calculateTotalPrice(item);
+}
+
+// --- Boyut seçimi ---
+document.querySelectorAll(".kucuk, .orta, .buyuk").forEach((el) => {
+  el.addEventListener("click", () => {
+    if (!modal.classList.contains("active")) return;
+
+    document
+      .querySelectorAll(
+        ".kucuk, .kucuk-daire, .kucukisim, .orta, .orta-daire, .ortaisim, .buyuk, .buyuk-daire, .buyukisim"
+      )
+      .forEach((b) => b.classList.remove("active"));
+
+    el.classList.add("active");
+    el.querySelectorAll("div, span").forEach((child) =>
+      child.classList.add("active")
+    );
+
+    if (el.classList.contains("kucuk")) selectedSize = "s";
+    else if (el.classList.contains("orta")) selectedSize = "m";
+    else selectedSize = "l";
+
+    if (currentItem) calculateTotalPrice(currentItem);
+  });
+});
+
+// --- Additive seçimi ---
+document.querySelectorAll(".kucuk1, .orta1, .buyuk1").forEach((el, index) => {
+  el.addEventListener("click", () => {
+    if (!modal.classList.contains("active")) return;
+
+    // Seçimi tersine çevir
+    el.classList.toggle("active");
+    el.querySelectorAll("div, span").forEach((child) =>
+      child.classList.toggle("active")
+    );
+
+    // Diziyi güncelle
+    if (el.classList.contains("active")) {
+      if (!selectedAdditives.includes(index)) {
+        selectedAdditives.push(index);
+      }
+    } else {
+      selectedAdditives = selectedAdditives.filter((i) => i !== index);
+    }
+
+    if (currentItem) calculateTotalPrice(currentItem);
+  });
+});
+
+function closeModal() {
+  modal.classList.remove("active");
+  document.body.style.overflow = "";
+
+  // Durumları sıfırla
+  currentItem = null;
+  selectedSize = "s";
+  selectedAdditives = [];
+
+  // UI temizliği
+  document
+    .querySelectorAll(
+      ".kucuk, .kucuk-daire, .kucukisim, .orta, .orta-daire, .ortaisim, .buyuk, .buyuk-daire, .buyukisim, .kucuk1, .orta1, .buyuk1, .kucuk1-daire, .kucuk1-isim, .orta1-daire, .orta1-isim, .buyuk1-daire, .buyuk1-isim"
+    )
+    .forEach((el) => el.classList.remove("active"));
+
   modalTitle.textContent = "";
   modalDesc.textContent = "";
   modalImg.src = "";
+  price.textContent = "";
 }
-
-// Dışarıya tıklayınca kapansın
-modal.addEventListener("click", (e) => {
-  console.log(e.target.classList[0]);
-  if (
-    e.target.classList[0] === "modal-container" ||
-    e.target.classList.contains("kapatmatusu")
-  ) {
-    closeModal();
-  }
-});
