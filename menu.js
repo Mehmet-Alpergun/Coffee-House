@@ -196,7 +196,7 @@ function closeModal() {
   // Tüm active class’larını temizle
   document
     .querySelectorAll(
-      ".kucuk, .kucuk-daire, .kucukisim, .orta, .orta-daire, .ortaisim, .buyuk, .buyuk-daire, .buyukisim, .kucuk1, .orta1, .buyuk1, .kucuk1-daire,.kucuk1-isim,.orta1-daire,.orta1-isim, .buyuk1-daire, .buyuk1-isim"
+      ".kucuk, .kucuk-daire, .kucukisim, .orta, .orta-daire, .ortaisim, .buyuk, .buyuk-daire, .buyukisim, .kucuk1, .orta1, .buyuk1, .kucuk1-daire, .kucuk1-isim, .orta1-daire, .orta1-isim, .buyuk1-daire, .buyuk1-isim"
     )
     .forEach((el) => el.classList.remove("active"));
 
