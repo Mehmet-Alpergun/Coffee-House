@@ -233,3 +233,14 @@ function closeModal() {
   modalImg.src = "";
   price.textContent = "";
 }
+
+// Dışarıya tıklayınca kapansın
+modal.addEventListener("click", (e) => {
+  console.log(e.target.classList[0]);
+  if (
+    e.target.classList[0] === "modal-container" ||
+    e.target.classList.contains("kapatmatusu")
+  ) {
+    closeModal();
+  }
+});
