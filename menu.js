@@ -132,9 +132,7 @@ let basePrice = 0;
 function openModal(item) {
   currentItem = item;
   modal.classList.add("active");
-
   document.body.style.overflow = "hidden";
-
   modalTitle.textContent = item.name;
   modalDesc.textContent = item.description;
   modalImg.src = `./${item.name}.svg`;
