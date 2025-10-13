@@ -1033,6 +1033,37 @@ header {
 }
 @media (min-width: 769px) {
   /* Buradaki stiller hem telefon hem tablet için geçerli olacak */
+
+  .coffee-container:hover {
+    background-color: #665f55;
+  }
+  .coffee-container:hover .coffee-round {
+    background-color: #e1d4c9;
+  }
+  .coffee-container:hover .coffee-text {
+    color: #e1d4c9;
+  }
+
+  .tea-container:hover {
+    background-color: #665f55;
+  }
+  .tea-container:hover .tea-round {
+    background-color: #e1d4c9;
+  }
+  .tea-container:hover .tea-text {
+    color: #e1d4c9;
+  }
+
+  .dessert-container:hover {
+    background-color: #665f55;
+  }
+  .dessert-container:hover .dessert-round {
+    background-color: #e1d4c9;
+  }
+  .dessert-container:hover .dessert-text {
+    color: #e1d4c9;
+  }
+
   .iconlaralbayim {
     display: none;
     width: 20px;
