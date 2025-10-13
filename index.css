@@ -163,8 +163,12 @@ header {
   font-weight: bold;
 }
 .iconlaralbayim {
+  display: none;
   width: 20px;
   height: 20px;
+}
+.butonundur:hover .iconlaralbayim {
+  display: flex;
 }
 .enustlogo {
   width: 100px;
