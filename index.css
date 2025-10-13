@@ -456,6 +456,7 @@ header {
   font-weight: 600;
   font-size: 24px;
   line-height: 125%;
+  color: #403f3d;
 }
 .smalltitle {
   font-size: 16px;
@@ -467,6 +468,7 @@ header {
   font-size: 24px;
   font-weight: 600;
   line-height: 125%;
+  color: #403f3d;
 }
 
 .menu-container {
@@ -1544,6 +1546,7 @@ header {
     font-weight: 600;
     font-size: 24px;
     line-height: 125%;
+    color: #403f3d;
   }
   .smalltitle {
     font-size: 16px;
@@ -1555,6 +1558,7 @@ header {
     font-size: 24px;
     font-weight: 600;
     line-height: 125%;
+    color: #403f3d;
   }
 
   .modal {
@@ -2002,6 +2006,7 @@ header {
     font-weight: 600;
     font-size: 24px;
     line-height: 125%;
+    color: #403f3d;
   }
   .smalltitle {
     font-size: 16px;
@@ -2013,6 +2018,7 @@ header {
     font-size: 24px;
     font-weight: 600;
     line-height: 125%;
+    color: #403f3d;
   }
 
   .modal {
