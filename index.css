@@ -1484,6 +1484,13 @@ header {
     width: 310px;
     height: 310px;
     cursor: pointer;
+    object-fit: cover;
+    transform-origin: center center;
+    transition: transform 0.8s ease;
+    transform: scale(1);
+  }
+  .previewimage:hover {
+    transform: scale(0.95);
   }
   .description {
     width: 310px;
