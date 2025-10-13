@@ -1022,6 +1022,11 @@ header {
   border: 1px solid #665f55;
   background-color: #e1d4c9;
   cursor: pointer;
+  color: #403f3d;
+}
+.kapatmatusu:hover {
+  background-color: #665f55;
+  color: #e1d4c9;
 }
 .real-description {
   font-size: 16px;
