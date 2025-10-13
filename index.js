@@ -67,7 +67,8 @@ function prevSlide() {
 
 // Otomatik geçişi başlat
 function startAutoSlide() {
-  intervalId = setInterval(nextSlide, 2000);
+  stopAutoSlide(); // Zaten varsa önce durdur
+  intervalId = setInterval(nextSlide, 5000);
 }
 
 // Otomatik geçişi durdur
@@ -91,6 +92,37 @@ slides.forEach((slide) => {
   // Mobilde dokunma desteği
   slide.addEventListener("touchstart", stopAutoSlide);
   slide.addEventListener("touchend", startAutoSlide);
+});
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+function handleGesture() {
+  const swipeDistance = touchEndX - touchStartX;
+  const minSwipeDistance = 50; // minimum sürükleme mesafesi (piksel)
+
+  if (Math.abs(swipeDistance) > minSwipeDistance) {
+    if (swipeDistance < 0) {
+      // Sağdan sola sürükleme → Sonraki slayt
+      nextSlide();
+    } else {
+      // Soldan sağa sürükleme → Önceki slayt
+      prevSlide();
+    }
+  }
+}
+
+slides.forEach((slide) => {
+  slide.addEventListener("touchstart", (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    stopAutoSlide(); // otomatik geçişi durdur
+  });
+
+  slide.addEventListener("touchend", (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleGesture();
+    startAutoSlide(); // tekrar başlat
+  });
 });
 
 startAutoSlide();
