@@ -405,10 +405,7 @@ header {
   text-decoration: none;
   color: #e1d4c9;
 }
-.contact-info-konum:hover {
-  border-bottom: 1px solid #e1d4c9;
-  cursor: pointer;
-}
+
 .contact-icon {
   width: 20px;
   height: 20px;
@@ -1418,6 +1415,7 @@ header {
   }
   .contact-info-konum:hover {
     border-bottom: 1px solid #e1d4c9;
+    cursor: pointer;
   }
   .contact-icon {
     width: 20px;
