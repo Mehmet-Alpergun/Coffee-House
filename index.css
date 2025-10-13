@@ -30,6 +30,7 @@ header {
   justify-content: space-between;
   width: 348px;
   font-size: 16px;
+  align-items: center;
 }
 .logoresmi {
   width: 100px;
@@ -1049,6 +1050,7 @@ header {
     justify-content: space-between;
     width: 688px;
     font-size: 16px;
+    align-items: center;
   }
   .dort {
     display: none;
@@ -1106,6 +1108,12 @@ header {
     color: #403f3d;
     font-weight: 600;
     font-size: 16px;
+    height: 20px;
+  }
+  .kose:hover {
+    /* uygulamak istediğin stiller */
+    border-bottom: 2px solid #403f3d;
+    padding: 5px 0px;
   }
   .ozel {
     margin-left: 4px;
@@ -2041,5 +2049,6 @@ header {
     justify-content: space-between;
     width: 1360px;
     font-size: 16px;
+    align-items: center;
   }
 }
