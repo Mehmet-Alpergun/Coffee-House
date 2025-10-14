@@ -17,22 +17,31 @@ lan.addEventListener("click", () => {
 
 const productsContainer = document.querySelector(".menu-products");
 
+//ssssssssssssssssssssssssssssssssssssss
+
+const loadMoreBtn = document.getElementById("reloadbutonu"); // HTML'de var olan buton
+let currentCategory = "coffee";
+let visibleCount = 4; // Başlangıçta kaç ürün gösterileceğini tutar
+let allProducts = []; // Filtrelenmiş ürünler burada tutulacak
+
 function loadCategory(category) {
   fetch("./products.json")
     .then((res) => res.json())
     .then((data) => {
-      console.log(category);
-      renderProducts(data, category);
+      currentCategory = category;
+      allProducts = data.filter((item) => item.category === category);
+      visibleCount = window.innerWidth <= 768 ? 4 : allProducts.length;
+      renderProducts();
+      updateLoadMoreVisibility();
     })
     .catch((err) => console.error("JSON yüklenemedi:", err));
 }
 
-function renderProducts(data, category) {
-  console.log(data);
+function renderProducts() {
   productsContainer.innerHTML = "";
-  const filtered = data.filter((item) => item.category === category);
+  const itemsToShow = allProducts.slice(0, visibleCount);
 
-  filtered.forEach((item) => {
+  itemsToShow.forEach((item) => {
     const card = document.createElement("div");
     card.classList.add("preview");
     card.innerHTML = `
@@ -46,10 +55,23 @@ function renderProducts(data, category) {
       </div>
     `;
     productsContainer.appendChild(card);
-
     card.addEventListener("click", () => openModal(item));
   });
 }
+function updateLoadMoreVisibility() {
+  // Eğer mobilse ve gösterilen ürün sayısı toplamdan azsa butonu göster
+  if (window.innerWidth <= 768 && visibleCount < allProducts.length) {
+    loadMoreBtn.style.display = "block";
+  } else {
+    loadMoreBtn.style.display = "none";
+  }
+}
+
+loadMoreBtn.addEventListener("click", () => {
+  visibleCount = allProducts.length;
+  renderProducts();
+  updateLoadMoreVisibility();
+});
 
 function changeToActive(category) {
   const categories = ["coffee", "tea", "dessert"];
