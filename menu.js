@@ -61,7 +61,7 @@ function renderProducts() {
 function updateLoadMoreVisibility() {
   // Eğer mobilse ve gösterilen ürün sayısı toplamdan azsa butonu göster
   if (window.innerWidth <= 768 && visibleCount < allProducts.length) {
-    loadMoreBtn.style.display = "block";
+    loadMoreBtn.style.display = "flex";
   } else {
     loadMoreBtn.style.display = "none";
   }
