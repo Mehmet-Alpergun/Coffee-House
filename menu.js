@@ -73,6 +73,17 @@ loadMoreBtn.addEventListener("click", () => {
   updateLoadMoreVisibility();
 });
 
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 768) {
+    visibleCount = allProducts.length; // geniş ekranda tüm ürünleri göster
+  } else {
+    visibleCount = Math.min(visibleCount, 4); // mobile geçince max 4 ürün göster
+  }
+
+  renderProducts();
+  updateLoadMoreVisibility();
+});
+
 function changeToActive(category) {
   const categories = ["coffee", "tea", "dessert"];
 
