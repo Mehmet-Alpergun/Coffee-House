@@ -1033,7 +1033,7 @@ header {
 .real-description {
   font-size: 16px;
 }
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   /* Buradaki stiller hem telefon hem tablet için geçerli olacak */
 
   .coffee-container:hover {
