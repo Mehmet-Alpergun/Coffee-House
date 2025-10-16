@@ -1,10 +1,16 @@
 html {
   scroll-behavior: smooth;
+  top: 0;
+  left: 0;
 }
 
 body {
   background-color: #e1d4c9;
   font-family: Inter;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  box-sizing: border-box; /* burası değişti*/
+  margin: 0; /* burası değişti*/
 }
 header {
   display: flex;
@@ -12,6 +18,16 @@ header {
   align-items: center;
   flex-direction: column;
   padding-bottom: 20px;
+}
+.millk {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hepsonradan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .reloadbutonu {
   width: 60px;
@@ -31,6 +47,7 @@ header {
   width: 348px;
   font-size: 16px;
   align-items: center;
+  box-sizing: border-box;
 }
 .logoresmi {
   width: 100px;
@@ -44,6 +61,7 @@ header {
   width: 44px;
   height: 44px;
   display: flex;
+  right: 0;
 }
 .normalolan.active {
   display: none;
@@ -62,7 +80,7 @@ header {
 .dort.active {
   display: flex;
   justify-content: center;
-  font-size: 16px;
+  font-size: 32px;
   font-weight: 600;
   color: #403f3d;
 }
@@ -117,36 +135,42 @@ header {
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
   top: 0;
   left: 0;
-  width: 100%;
-  margin-top: 50px;
+  width: 348px;
+  height: 552px;
+  padding: 60px 16px;
+  box-sizing: border-box;
+}
+.sonradan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 576px;
+  gap: 40px;
+  justify-content: space-between;
 }
 
 .ikispankapsayici {
-  color: aliceblue;
-  font-size: 40px;
+  font-size: 42px;
   text-align: center;
-  max-width: 300px;
-  top: 60px;
+  max-width: 316px;
   text-align: left;
+  height: 144px;
 }
 .videoyazisi {
-  max-width: 320px;
+  max-width: 316px;
   color: #d9d9d9;
-  margin-top: 42px;
-  line-height: 1.625;
+  line-height: 150%;
   opacity: 1;
+  height: 144px;
 }
 .butonundur {
   width: 200px;
   height: 64px;
   align-self: start;
-  margin-left: 20px;
   border-radius: 30px;
-  margin-top: 50px;
   background-color: #e1d4c9;
   border: none;
   position: relative;
@@ -194,11 +218,13 @@ header {
   display: flex;
 }
 .sldiercontainerbaslik {
-  font-size: 34px;
+  font-size: 32px;
   max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: 600;
+  height: 80px;
 }
 .sliderimage {
   width: 348px;
@@ -210,9 +236,15 @@ header {
   justify-content: space-between;
   height: 164px;
   width: 348px;
+  gap: 16px;
 }
 .kahvekelimesi {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.millk {
+  display: inline-block;
   justify-content: center;
   align-items: center;
 }
@@ -256,6 +288,7 @@ header {
   background-repeat: no-repeat; /* Tekrarlamasın diye */
   border-radius: 20px;
 }
+
 .column-1-second {
   width: 348px;
   height: 590px;
@@ -1024,7 +1057,6 @@ header {
   border: 1px solid #665f55;
   background-color: #e1d4c9;
   cursor: pointer;
-  color: #403f3d;
 }
 .kapatmatusu:hover {
   background-color: #665f55;
@@ -1035,7 +1067,13 @@ header {
 }
 @media (min-width: 768px) {
   /* Buradaki stiller hem telefon hem tablet için geçerli olacak */
-
+  .hepsonradan {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* width: 688px; */
+    height: 640px;
+  }
   .coffee-container:hover {
     background-color: #665f55;
   }
@@ -1065,7 +1103,6 @@ header {
   .dessert-container:hover .dessert-text {
     color: #e1d4c9;
   }
-
   .iconlaralbayim {
     display: none;
     width: 20px;
@@ -1074,7 +1111,6 @@ header {
   .butonundur:hover .iconlaralbayim {
     display: flex;
   }
-
   .reloadbutonu {
     display: none;
   }
@@ -1112,7 +1148,7 @@ header {
   }
   .extra ul {
     display: flex;
-    gap: 20px;
+    gap: 40px;
     justify-content: center;
     align-items: center;
     padding: 0px;
@@ -1145,6 +1181,7 @@ header {
     font-size: 16px;
     height: 20px;
   }
+
   .kose:hover {
     /* uygulamak istediğin stiller */
     border-bottom: 2px solid #403f3d;
@@ -1185,47 +1222,66 @@ header {
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     top: 0;
     left: 0;
     width: 100%;
-    margin-top: 100px;
+    padding: 100px 60px;
+    gap: 40px;
+    width: 688px;
+    height: 644px;
+    box-sizing: border-box;
   }
-
+  .sonradan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 684px;
+    gap: 40px;
+    justify-content: space-between;
+  }
+  .slideryazicontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 140px;
+    width: 480px;
+    gap: 16px;
+  }
   .ikispankapsayici {
     color: aliceblue;
-    font-size: 60px;
+    font-size: 72px;
     text-align: center;
-    max-width: 560px;
+    max-width: 530px;
     top: 60px;
     text-align: left;
+    height: 228px;
   }
   .videoyazisi {
-    max-width: 560px;
+    max-width: 530px;
     color: #d9d9d9;
-    margin-top: 42px;
     line-height: 1.625;
     opacity: 1;
+    height: 72px;
   }
   .butonundur {
     width: 200px;
     height: 64px;
     align-self: start;
-    margin-left: 60px;
     border-radius: 30px;
-    margin-top: 50px;
     background-color: #e1d4c9;
     border: none;
   }
 
   /*444*/
   .sldiercontainerbaslik {
-    font-size: 45px;
-    max-width: 100%;
+    font-size: 50px;
+    max-width: 688px;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 150px;
   }
   .kahvekelimesi {
     display: flex;
@@ -1239,6 +1295,7 @@ header {
     align-items: center;
     gap: 40px;
     height: 874px;
+    max-width: 688px;
   }
   .slidercontainer.active {
     display: flex;
@@ -1272,6 +1329,7 @@ header {
     background-color: #e1d4c9;
     border: 1px solid #665f55;
     color: #403f3d;
+    margin-top: 146px;
   }
   .soloklar:hover {
     background-color: #665f55;
@@ -1290,6 +1348,7 @@ header {
     background-color: #e1d4c9;
     border: 1px solid #665f55;
     color: #403f3d;
+    margin-top: 146px;
   }
   .sagoklar:hover {
     background-color: #665f55;
@@ -1453,7 +1512,6 @@ header {
   }
   .contact-info-konum:hover {
     border-bottom: 1px solid #e1d4c9;
-    cursor: pointer;
   }
   .contact-icon {
     width: 20px;
@@ -1502,7 +1560,15 @@ header {
     background-color: #e1d4c9;
     justify-content: center;
   }
-
+  .totall {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    font-weight: 600;
+    width: 326px;
+    height: 30px;
+    color: #403f3d;
+  }
   .menu-products {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1535,6 +1601,31 @@ header {
     padding: 20px;
     text-align: left;
   }
+  .uyari {
+    border-top: 1px solid #c1b6ad;
+    display: flex;
+    gap: 8px;
+    width: 326px;
+    height: 66px;
+    justify-content: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    box-sizing: border-box;
+  }
+  .kapatmatusu {
+    width: 326px;
+    height: 44px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px 78px;
+    border-radius: 100px;
+    border: 1px solid #665f55;
+    background-color: #e1d4c9;
+    cursor: pointer;
+  }
+
   .titletogether {
     width: 270px;
     height: 114px;
@@ -1589,14 +1680,22 @@ header {
     width: 346px;
     height: 594px;
     justify-content: space-between;
-    padding-left: 20px;
     box-sizing: border-box;
+    gap: 20px;
+    align-items: center;
   }
   .titlelann {
     display: flex;
     flex-direction: column;
     gap: 12px;
     height: 114px;
+  }
+  .sizze {
+    width: 326px;
+    height: 132px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
   }
 }
 
@@ -1643,31 +1742,32 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    margin-top: 100px;
+    padding: 100px;
+    gap: 40px;
   }
   .ikispankapsayici {
     color: aliceblue;
     font-size: 60px;
     text-align: center;
-    max-width: 560px;
-    top: 60px;
+    max-width: 530px;
     text-align: left;
-    margin-left: 50px;
+    height: 228px;
   }
   .videoyazisi {
     max-width: 560px;
     color: #d9d9d9;
-    margin-top: 42px;
     line-height: 1.625;
     opacity: 1;
-    margin-left: 60px;
+    height: 72px;
+    margin-top: 0px;
   }
   .sldiercontainerbaslik {
-    font-size: 45px;
+    font-size: 60px;
     max-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 75px;
   }
   .kahvekelimesi {
     display: inline;
@@ -1677,14 +1777,16 @@ header {
 
   .slidercontainer {
     display: none;
-    max-width: 1240px;
+    max-width: 1232px;
     align-items: center;
     gap: 40px;
     height: 799px;
   }
   .slidercontainer.active {
     display: flex;
+    height: 799px;
   }
+
   .sliderimage {
     width: 480px;
     height: 480px;
@@ -1693,8 +1795,37 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1240px;
+    width: 1232px;
   }
+  .sonradan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 684px;
+    gap: 40px;
+    justify-content: space-between;
+    width: 1232;
+  }
+  .hepsonradan {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1232px;
+    height: 640px;
+    gap: 0px;
+  }
+  .butonundur {
+    width: 200px;
+    height: 64px;
+    align-self: start;
+    border-radius: 30px;
+    background-color: #e1d4c9;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
   .soloklar {
     display: flex;
     cursor: pointer;
@@ -1707,6 +1838,7 @@ header {
     background-color: #e1d4c9;
     border: 1px solid #665f55;
     color: #403f3d;
+    margin-top: 70px;
   }
   .soloklar:hover {
     background-color: #665f55;
@@ -1724,6 +1856,7 @@ header {
     background-color: #e1d4c9;
     border: 1px solid #665f55;
     color: #403f3d;
+    margin-top: 70px;
   }
   .sagoklar:hover {
     background-color: #665f55;
@@ -1780,7 +1913,7 @@ header {
     height: 630px;
   }
   .contacts-container {
-    width: 1440px;
+    width: 1360px;
     height: 450px;
     background-color: #665f55;
     padding: 100px 100px;
@@ -1789,7 +1922,7 @@ header {
     display: flex;
     flex-direction: row;
     gap: 100px;
-    margin-top: 100px;
+    align-items: center;
   }
   .contacts-offer-container {
     width: 530px;
@@ -1823,6 +1956,7 @@ header {
     flex-direction: column;
     justify-content: space-between;
     font-weight: 600;
+    gap: 40px;
   }
   .contacts-info-yazi {
     font-size: 24px;
@@ -1834,6 +1968,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 16px;
   }
   .contact-info-konum {
     width: 182px;
@@ -1953,6 +2088,8 @@ header {
     font-style: italic;
     color: #403f3d;
     text-align: center;
+    width: 800px;
+    height: 150px;
   }
   .brulan {
     display: none;
@@ -1994,6 +2131,9 @@ header {
     box-sizing: border-box;
     padding: 20px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
   .titletogether {
     width: 270px;
@@ -2032,7 +2172,6 @@ header {
     padding: 16px;
     color: #403f3d;
     background-color: #e1d4c9;
-    gap: 20px;
   }
   .resim-modal {
     display: flex;
@@ -2048,10 +2187,12 @@ header {
   .description-contaier {
     display: flex;
     flex-direction: column;
-    width: 452px;
+    width: 458px;
     height: 472px;
     justify-content: space-between;
-    padding-left: 0px;
+    /* padding-left: 20px; */
+    box-sizing: border-box;
+    gap: 20px;
   }
 
   .titlelann {
@@ -2059,6 +2200,7 @@ header {
     flex-direction: column;
     gap: 12px;
     height: 90px;
+    width: 438px;
   }
 
   .titlelan-name {
@@ -2097,5 +2239,38 @@ header {
     width: 1360px;
     font-size: 16px;
     align-items: center;
+  }
+  .totall {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    font-weight: 600;
+    width: 438px;
+    height: 30px;
+    color: #403f3d;
+  }
+  .uyari {
+    border-top: 1px solid #c1b6ad;
+    display: flex;
+    gap: 8px;
+    width: 438px;
+    height: 52px;
+    justify-content: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    box-sizing: border-box;
+  }
+  .kapatmatusu {
+    width: 438px;
+    height: 44px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px 78px;
+    border-radius: 100px;
+    border: 1px solid #665f55;
+    background-color: #e1d4c9;
+    cursor: pointer;
   }
 }
